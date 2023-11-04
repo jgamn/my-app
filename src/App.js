@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+const [contador,setcontador] = useState(0)
 
-export default App;
+  function fibonacci(conta2) {
+    if (conta2 <= 1) return conta2;
+    return fibonacci(conta2-1) + fibonacci(conta2-2);
+    }
+
+    return (
+      
+      <div>
+        <h1>Contador Fibonacci: {contador}</h1>
+       <h2>Numero Fibonacci {fibonacci(contador)}</h2>
+        <button onClick = {() => setcontador(contador+1)}>clique</button>
+     </div>
+    );
+  }
+  export default App
